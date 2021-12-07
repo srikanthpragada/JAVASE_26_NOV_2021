@@ -5,6 +5,12 @@ class Product {
 	private String name;
 	private double price;
 	private int qoh;
+	// Class variable / static variable
+	private static int taxrate = 12;
+
+	public static int getTaxrate() {
+		return Product.taxrate;
+	}
 
 	// Constructor
 	public Product(String name, double price) {
@@ -14,7 +20,7 @@ class Product {
 	}
 
 	public Product(String name, double price, int qoh) {
-		this(name,price); // Call another constructor 
+		this(name, price); // Call another constructor
 		this.qoh = qoh;
 	}
 
@@ -29,12 +35,13 @@ class Product {
 	}
 
 	public double getNetPrice() {
-		return price + price * 0.12;
+		return price + (price * Product.taxrate / 100);
 	}
-	
+
 	public void purchase(int qty) {
 		qoh += qty;
 	}
+
 	public void sell(int qty) {
 		qoh -= qty;
 	}
@@ -43,8 +50,12 @@ class Product {
 public class TestProduct {
 
 	public static void main(String[] args) {
+		
+		System.out.println(Product.getTaxrate());
+		
+		
 		Product p1 = new Product("Dell XPS", 200000); // object
-		Product p2 = new Product("iPhone 13", 120000,10);
+		Product p2 = new Product("iPhone 13", 120000, 10);
 		p1.print();
 		System.out.println(p1.getNetPrice());
 
