@@ -4,6 +4,11 @@ class SavingsAccount {
 	private int acno;
 	private String customer;
 	private double balance;
+	private static int minbalance = 5000;
+	
+	public static int getMinbalance() {
+		return SavingsAccount.minbalance;
+	}
 
 	public SavingsAccount(int acno, String customer) {
 		this.acno = acno;
@@ -21,6 +26,9 @@ class SavingsAccount {
 	}
 
 	public void withdraw(double amount) {
+		if (this.balance - SavingsAccount.minbalance < amount)
+			throw new RuntimeException("Insufficient Funds");
+			
 		this.balance -= amount;
 	}
 

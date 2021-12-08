@@ -2,13 +2,18 @@ package oop;
 
 class Circle {
 	private int x, y, r;
+	private static int count = 0;
 	
+	public static int getCount() {
+		return  Circle.count;
+	}
 	
 	public Circle(int x, int y, int r) {
 		super();
 		this.x = x;
 		this.y = y;
 		this.r = r;
+		Circle.count ++;
 	}
 	public double getArea() {
 		return 3.14 * this.r * this.r;
