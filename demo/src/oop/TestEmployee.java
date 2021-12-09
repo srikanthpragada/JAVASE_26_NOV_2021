@@ -13,6 +13,9 @@ class Employee {
 		System.out.println(this.name);
 		System.out.println(this.salary);
 	}
+	public int getSalary() {
+		return this.salary;
+	}
 }
 
 class OnsiteEmployee extends Employee {
@@ -24,20 +27,34 @@ class OnsiteEmployee extends Employee {
 	}
 
 	// Overriding
+	@Override 
 	public void print() {
 		super.print();
 		System.out.println(this.allowance);
 	}
-
+	@Override 
+	public int getSalary() {
+		return  this.salary + this.allowance;
+	}
 }
 
 public class TestEmployee {
 
 	public static void main(String[] args) {
-		Employee e = new Employee("A", 90000);
-		e.print();
-		OnsiteEmployee oe = new OnsiteEmployee("B", 60000, 40000);
-		oe.print();
+//		Employee e = new Employee("A", 90000);
+//		e.print();
+//		System.out.println(e.getSalary());
+//		OnsiteEmployee oe = new OnsiteEmployee("B", 60000, 40000);
+//		oe.print();
+//		System.out.println(oe.getSalary());
+		
+		OnsiteEmployee onsite;
+		Employee emp;
+		
+		emp = new Employee("E1", 50000);
+		if (emp instanceof OnsiteEmployee)
+		    onsite = (OnsiteEmployee) emp;
+		
 
 	}
 
