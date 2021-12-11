@@ -18,11 +18,12 @@ class Student extends Person {
 		super(name);
 		this.course = course;
 	}
+	@Override
 	public void print() {
 		super.print();
 		System.out.println(this.course);
 	}
-	
+	@Override 
 	public String getOccupation() {
 		return "Studying " + this.course; 
 	}
