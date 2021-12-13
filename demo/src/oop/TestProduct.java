@@ -50,10 +50,7 @@ class Product {
 public class TestProduct {
 
 	public static void main(String[] args) {
-		
 		System.out.println(Product.getTaxrate());
-		
-		
 		Product p1 = new Product("Dell XPS", 200000); // object
 		Product p2 = new Product("iPhone 13", 120000, 10);
 		p1.print();
