@@ -14,6 +14,18 @@ class Person extends Object{
 	public String toString() {
 		return this.name + "-" + this.age;
 	}
+	
+	@Override 
+	public boolean equals(Object obj) {
+		Person other = (Person) obj; // downcasting
+		return this.name.equals(other.name) && 
+		       this.age == other.age;
+	}
+	
+	@Override 
+	public int hashCode() {
+		return 1;
+	}
 }
 
 public class TestPerson {
@@ -25,6 +37,9 @@ public class TestPerson {
 		System.out.println(p1 == p2);
 		System.out.println(p1.equals(p2));
 		System.out.println(p1.toString());
+		
+		System.out.println(p1.hashCode());
+		System.out.println(p2.hashCode());
 
 	}
 
