@@ -5,15 +5,16 @@ import java.util.ArrayList;
 public class SortNames {
 
 	public static void main(String[] args) {
-		 ArrayList<String> al = new ArrayList<>();
+		 var al = new ArrayList<String>();
 		 
 		 al.add("Scott");
 		 al.add("Tom");
 		 al.add("Ben");
+		 al.add("Mark");
 		 
-		 al.sort(null);
+		 al.sort(null);  // Sort using Default Order
 		 
-		 for(String n : al)
+		 for(var n : al)
 			 System.out.println(n);
 		 
 	}
