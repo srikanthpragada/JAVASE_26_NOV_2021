@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public class SortWords2 {
 
 	public static void main(String[] args) throws Exception {
-		Path path = Path.of("c:\\classroom\\old_man.txt");
+		Path path = Path.of("d:\\classroom\\old_man.txt");
 		String contents = Files.readString(path);
 		String words[] = contents.split("\\W+");  // Use non-word to split 
 

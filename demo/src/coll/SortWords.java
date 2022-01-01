@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public class SortWords {
 
 	public static void main(String[] args) throws Exception  {
-		FileReader fr = new FileReader("c:\\classroom\\old_man.txt");
+		FileReader fr = new FileReader("d:\\classroom\\old_man.txt");
 		BufferedReader br = new BufferedReader(fr);
 		TreeSet<String> sortedWords = new TreeSet<>();
 		
