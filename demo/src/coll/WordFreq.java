@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class WordFreq {
 
 	public static void main(String[] args) throws Exception {
-		Path p = Path.of("c:\\classroom\\old_man.txt");
+		Path p = Path.of("d:\\classroom\\old_man.txt");
 		String text = Files.readString(p);
 
 		var words = text.split("\\W+");
