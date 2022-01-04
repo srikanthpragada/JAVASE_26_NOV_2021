@@ -8,7 +8,7 @@ public class AverageLength {
 
 	public static void main(String[] args) throws IOException {
 		 
-		var lines = Files.lines(Paths.get("d:\\classroom\\jan22\\names.txt"));
+		var lines = Files.lines(Paths.get("d:\\classroom\\nov26\\names.txt"));
 		
 		var avg = lines.filter(v -> v.trim().length() > 0 )
 				       .mapToInt(v ->  v.length())
