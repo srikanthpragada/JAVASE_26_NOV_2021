@@ -3,17 +3,20 @@ package streams;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class SortMarks {
+public class PrintAvgMarks {
 
 	public static void main(String[] args) throws Exception {
 
 		Path p = Path.of("d:\\classroom\\nov26\\marks.txt");
 
-		Files.lines(p)
+		var avgMarks = 
+		   	  Files.lines(p)
 		     .mapToInt(v -> Integer.parseInt(v))  // Covert to int
-		     //.filter(v -> v >= 50)                // select only values >= 50
-		     .sorted()                            // sort 
-		     .forEach(System.out::println);       // print
+		     .average()       			      	// OptionalDouble 
+		     .getAsDouble();
+		
+		System.out.println(avgMarks);
+		    
 	}
 
 }
